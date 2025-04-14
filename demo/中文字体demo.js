@@ -75,13 +75,13 @@ var option = {
         }
     ]
 };
-var node_echarts = require('node-echarts');
+var node_echarts = require('../index.js');
 var path = require('path');
-var Canvas =require('./node-canvas');
-Canvas.registerFont(path.join(__dirname, "华文仿宋.ttf"), { family: "华文仿宋"});
+var { registerFont, Canvas } = require('canvas');
+registerFont(path.join(__dirname, "../fonts/SimKai.ttf"), { family: "楷体"});
 node_echarts({
     canvas: Canvas,
-    font: '12px 华文仿宋',
+    font: '12px 楷体',
     path: __dirname + '/中文字体demo.png',
     option: option,
     width:  1000,
